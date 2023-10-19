@@ -44,6 +44,10 @@ def isTrue(a:Matchable):Boolean = a match
     case false | 0 | "" => false
     case _ => true
 
+isTrue(0)
+
+
+
 
 // try/catch/finally Blocks
 
@@ -539,7 +543,9 @@ try
     sourceOption = Some(Source.fromFile("/etc/passwd1"))
     sourceOption.foreach { source =>
         // do whatever you need to do with 'source' here ...
-        for line <- source.getLines do println(line.toUpperCase)
+        for (line <- source.getLines){
+            println(line.toUpperCase)
+        } 
     }
 catch
     case ioe: IOException => ioe.printStackTrace
